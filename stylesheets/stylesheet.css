@@ -1,0 +1,291 @@
+/*
+@-webkit-keyframes slideshow {
+  0% {filter: alpha(opacity=100); opacity: 1; z-index: 2;}
+  50% {filter: alpha(opacity=100); opacity: 1;}
+  70% {filter: alpha(opacity=0); opacity: 0;}
+  80% {z-index: 1;}
+  100% {filter: alpha(opacity=100); opacity: 1;}
+}
+@-moz-keyframes slideshow {
+  0% {filter: alpha(opacity=100); opacity: 1; z-index: 2;}
+  50% {filter: alpha(opacity=100); opacity: 1;}
+  70% {filter: alpha(opacity=0); opacity: 0;}
+  80% {z-index: 1;}
+  100% {filter: alpha(opacity=100); opacity: 1;}
+}
+@-o-keyframes slideshow {
+  0% {filter: alpha(opacity=100); opacity: 1; z-index: 2;}
+  50% {filter: alpha(opacity=100); opacity: 1;}
+  70% {filter: alpha(opacity=0); opacity: 0;}
+  80% {z-index: 1;}
+  100% {filter: alpha(opacity=100); opacity: 1;}
+}
+@keyframes slideshow {
+  0% {filter: alpha(opacity=100); opacity: 1; z-index: 2;}
+  50% {filter: alpha(opacity=100); opacity: 1;}
+  70% {filter: alpha(opacity=0); opacity: 0;}
+  80% {z-index: 1;}
+  100% {filter: alpha(opacity=100); opacity: 1;}
+}
+*/
+/* line 1, styles.scss */
+body, p, img, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  font-family: 'Pathway Gothic One', calibri, arial, helvetica, sans-serif;
+  font-size: 35px;
+  text-shadow: 1px 1px 3px #000;
+  line-height: 1.2em;
+}
+body {
+  background: #000;
+}
+.smaller {
+  font-family: 'Metrophobic', calibri, arial, helvetica, sans-serif;
+  font-size: 20px;
+}
+.bigger {
+  font-size: 28px;
+  margin-top: 2em;
+}
+/* line 10, styles.scss */
+#wrapper {
+  width: 90%;
+  margin: 0 5%;
+  position: absolute;
+}
+
+/* line 15, styles.scss */
+.iphone-container {
+  position: absolute;
+  width: 270px;
+  right: 0;
+}
+.slideshow-image {
+  position: absolute;
+  filter: alpha(opacity=100);
+  opacity: 1;
+  //z-index: 2;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  -ms-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+  /*
+  -webkit-animation: slideshow 6s linear infinite;
+  -moz-animation: slideshow 6s linear infinite;
+  -o-animation: slideshow 6s linear infinite;
+  animation: slideshow 6s linear infinite;
+  */
+}
+.slideshow-image:nth-of-type(2) {
+  /*
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  animation-delay: 2s;
+  */
+  //z-index: 1;
+}
+.slideshow-image:nth-of-type(3) {
+  /*
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  -o-animation-delay: 4s;
+  animation-delay: 4s;
+  */
+  //z-index: 1;
+}
+
+/* line 20, styles.scss */
+.iphone-screen, .placeholder {
+  position: fixed;
+  z-index: 2;
+  transition: opacity 1s ease-in-out;
+  -webkit-backface-visibility: hidden;
+}
+/* line 25, styles.scss */
+.iphone-screen img, .placeholder img {
+  width: 232px;
+  margin-left: 19px;
+  margin-top: 83px;
+}
+
+.iphone-screen:nth-of-type(2) img, .iphone-screen:nth-of-type(3) img, .iphone-screen:nth-of-type(4) img, .iphone-screen:nth-of-type(5) img {
+  margin-top: 137px;
+}
+
+/* line 31, styles.scss */
+.placeholder {
+  z-index: 1;
+  opacity: 1;
+}
+/* line 34, styles.scss */
+.placeholder .placeholder-image {
+  width: 232px;
+  height: 409px;
+  background: #000;
+  margin-left: 19px;
+  margin-top: 83px;
+}
+
+/* line 42, styles.scss */
+#iphone {
+  width: 270px;
+  height: auto;
+  position: fixed;
+  z-index: 1;
+}
+
+/* line 48, styles.scss */
+.mobile-image {
+  display: none;
+}
+
+/* line 51, styles.scss */
+.slide {
+  width: 100%;
+  height: auto;
+  min-height: 580px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+/* line 59, styles.scss */
+.slide .content, .last-slide .content {
+  width: 90%;
+  margin: 0 5%;
+  max-width: 1000px;
+  height: 100%;
+  position: absolute;
+  font-size: 0;
+}
+/* line 66, styles.scss */
+.slide .content:before, .last-slide .content:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+/* line 73, styles.scss */
+.slide .content .centerize, .last-slide .content .centerize {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40%;
+  padding-left: 10%;
+  font-size: 30px;
+}
+.last-slide .content .centerize {
+  margin-top: -3em;
+}
+
+@media (min-width: 1111px) {
+  /* line 82, styles.scss */
+  #wrapper {
+    width: 1000px;
+    left: 50%;
+    margin-left: -500px;
+  }
+
+  /* line 88, styles.scss */
+  .slide .content, .last-slide .content {
+    width: 1000px;
+    left: 50%;
+    margin-left: -500px;
+  }
+  
+}
+
+@media (min-width: 876px) {
+  .slide .content .centerize, .last-slide .content .centerize {
+    width: 50%;
+  }
+}
+
+@media (max-width: 720px) {
+  p {
+    font-size: 30px;
+  }
+  .smaller {
+    font-size: 20px;
+  }
+  .bigger {
+    font-size: 26px;
+  }
+  /* line 96, styles.scss */
+  .slide, .last-slide {
+    min-height: 750px !important;
+    background-attachment: scroll;
+    background-position: center center !important;
+  }
+  .slide[data-index=1] {
+    background-position: center bottom !important;
+  }
+  .slide:first-of-type, .slide:last-of-type {
+    min-height: 1200px !important;
+  }
+  .last-slide {
+    min-height: 250px !important;
+  }
+  /* line 99, styles.scss */
+  .slide .content, .last-slide .content {
+    height: 100%;
+    text-align: center;
+  }
+  /* line 102, styles.scss */
+  .slide .content .centerize, .last-slide .content .centerize {
+    width: 100%;
+    padding-left: 0;
+    vertical-align: top;
+  }
+  .slide .content .centerize > p:first-of-type {
+    padding-top: 2em;
+  }
+  .last-slide .content .centerize {
+    margin-top: 0;
+  }
+  /* line 107, styles.scss */
+  /*.slide .content .mobile-image {
+    display: block;
+    bottom: 150px;
+    position: absolute;
+    width: 260px;
+    left: 50%;
+    margin-left: -130px;
+  }
+  .slide:first-of-type .content .mobile-image {
+    bottom: 50px;
+  }*/
+  .slide .content .mobile-image {
+    display: inline-block;
+    margin-top: 2em;
+  }
+  /* line 114, styles.scss */
+  .slide .content .mobile-image img {
+    width: 260px;
+  }
+  .slide .content .mobile-image.slideshow {
+    width: 260px;
+    height: 461px;
+    display: inline-block;
+    position: relative;
+  }
+  .slide .content .mobile-image.slideshow img {
+    left: 0;
+  }
+
+  /* line 120, styles.scss */
+  #wrapper {
+    display: none;
+  }
+  .LR-site-title {
+    padding: 0 !important;
+    display: none !important;
+  }
+  .LR-pwd-lr {display: none !important;}
+}
