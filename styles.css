@@ -1,0 +1,154 @@
+/* line 1, styles.scss */
+body, p, img, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  font-family: calibri, arial, helvetica, sans-serif;
+  font-size: 30px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* line 10, styles.scss */
+#wrapper {
+  width: 90%;
+  margin: 0 5%;
+  position: absolute;
+}
+
+/* line 15, styles.scss */
+.iphone-container {
+  position: absolute;
+  width: 270px;
+  right: 0;
+}
+
+/* line 20, styles.scss */
+.iphone-screen, .placeholder {
+  position: fixed;
+  z-index: 2;
+  transition: opacity 1s ease-in-out;
+  -webkit-backface-visibility: hidden;
+}
+/* line 25, styles.scss */
+.iphone-screen img, .placeholder img {
+  width: 232px;
+  margin-left: 19px;
+  margin-top: 83px;
+}
+
+/* line 31, styles.scss */
+.placeholder {
+  z-index: 1;
+  opacity: 1;
+}
+/* line 34, styles.scss */
+.placeholder .placeholder-image {
+  width: 232px;
+  height: 409px;
+  background: #000;
+  margin-left: 19px;
+  margin-top: 83px;
+}
+
+/* line 42, styles.scss */
+#iphone {
+  width: 270px;
+  height: auto;
+  position: fixed;
+  z-index: 9999;
+}
+
+/* line 48, styles.scss */
+.mobile-image {
+  display: none;
+}
+
+/* line 51, styles.scss */
+.slide {
+  width: 100%;
+  height: auto;
+  min-height: 580px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+/* line 60, styles.scss */
+.slide .content {
+  width: 90%;
+  margin: 0 5%;
+  max-width: 1000px;
+  height: 100%;
+  position: absolute;
+  font-size: 0;
+}
+/* line 67, styles.scss */
+.slide .content:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+/* line 74, styles.scss */
+.slide .content .centerize {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40%;
+  font-size: 30px;
+}
+
+@media (min-width: 1111px) {
+  /* line 83, styles.scss */
+  #wrapper {
+    width: 1000px;
+    left: 50%;
+    margin-left: -500px;
+  }
+
+  /* line 89, styles.scss */
+  .slide .content {
+    width: 1000px;
+    left: 50%;
+    margin-left: -500px;
+  }
+}
+@media (max-width: 720px) {
+  /* line 97, styles.scss */
+  .slide {
+    min-height: 700px;
+    background-attachment: initial;
+    background-position: center center !important;
+  }
+  /* line 101, styles.scss */
+  .slide .content {
+    height: 50%;
+    text-align: center;
+  }
+  /* line 104, styles.scss */
+  .slide .content .centerize {
+    width: 100%;
+    vertical-align: top;
+    padding-top: 100px;
+  }
+  /* line 109, styles.scss */
+  .slide .content .mobile-image {
+    display: block;
+    top: 69%;
+    position: absolute;
+    width: 260px;
+    left: 50%;
+    margin-left: -130px;
+  }
+  /* line 116, styles.scss */
+  .slide .content .mobile-image img {
+    width: 260px;
+  }
+
+  /* line 122, styles.scss */
+  #wrapper {
+    display: none;
+  }
+}
